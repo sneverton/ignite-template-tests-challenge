@@ -61,7 +61,7 @@ describe("Get Balance Controller", () => {
     expect(response.body).toHaveProperty("balance")
   })
 
-  it("should not be able to show a balance of non existing user", async () => {
+  it("should not be able to show a balance when not authenticated", async () => {
     const response = await request(app)
     .get("/api/v1/statements/balance")
 
